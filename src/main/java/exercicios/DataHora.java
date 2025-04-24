@@ -49,6 +49,11 @@ public class DataHora {
         Instant data09 = Instant.parse("2022-07-20T11:36:11Z");
         System.out.println("data09: " + formatoGlobal.format(data09));
 
+        /*Convertendo Data Global para Local*/
+        Instant data10 = Instant.parse("2022-07-20T11:36:11Z");
+        LocalDateTime data10Conver = LocalDateTime.ofInstant(data10, ZoneId.systemDefault());
+        System.out.println("data10Conver: " + data10Conver.format(formatoGlobal));
+
 
 
     }
