@@ -30,6 +30,10 @@ public class DataHora {
         /*Instanciando data e hora separadamente*/
         LocalDateTime data07 = LocalDateTime.of(2002, 2, 1, 23, 30);
         System.out.println("data07: " + data07);
+
+
+        System.out.println("data01" + data01);
+        System.out.println("data02" + data02);
         /*-----------------------------------------------------------------------------------------------------------*/
         /*Transformando em String*/
         System.out.println("data06: " + data06.format(formato1));
