@@ -1,10 +1,8 @@
 package exercicios;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class DataHora {
     public static void main(String[] args) {
@@ -54,7 +52,20 @@ public class DataHora {
         LocalDateTime data10Conver = LocalDateTime.ofInstant(data10, ZoneId.systemDefault());
         System.out.println("data10Conver: " + data10Conver.format(formatoGlobal));
 
+        /*Calculos com data*/
+        LocalDate teste01 = LocalDate.parse("2022-07-20");
+        LocalDateTime teste02 = LocalDateTime.parse("2022-07-20T11:36:11Z");
+        Instant teste03 = Instant.parse("2022-07-20T11:36:11Z");
 
+        LocalDate latSemana = teste01.minusDays(7);
+        LocalDate proximaSemana = teste01.plusDays(7);
+        LocalDate proximoAno = teste01.plusYears(10);
+        LocalDateTime proximoMinuto = teste02.plusMinutes(1);
+
+        Instant lastSemanaInstant = teste03.minus(7, ChronoUnit.DAYS);
+
+        Duration t1 = Duration.between(proximaSemana.atStartOfDay(), teste01.atStartOfDay());
+        System.out.println("t1: " + t1.toDays());
 
     }
 }
